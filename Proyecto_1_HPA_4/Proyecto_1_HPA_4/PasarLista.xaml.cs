@@ -1,4 +1,5 @@
 ﻿using Plugin.NFC;
+using Proyecto_1_HPA_4.modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -190,7 +191,13 @@ namespace Proyecto_1_HPA_4
 			else
 			{
 				var first = tagInfo.Records[0];
-				await ShowAlert(GetMessage(first), title);
+				Estudiante estudiante = new Estudiante {
+					Nombre = tagInfo.Records[0].Message,
+					Cedula = tagInfo.Records[1].Message,
+					Fecha = new DateTime().Date.ToString()
+				};
+                await ShowAlert(estudiante.ToString(), $"Hola{estudiante.Nombre}");
+                //await ShowAlert(GetMessage(first), title);
 			}
 		}
 
@@ -202,12 +209,12 @@ namespace Proyecto_1_HPA_4
 		void Current_OniOSReadingSessionCancelled(object sender, EventArgs e) => Debug("iOS NFC Session has been cancelled");
 
 
-		/// <summary>
-		/// Event raised when a NFC Tag is discovered
-		/// </summary>
-		/// <param name="tagInfo"><see cref="ITagInfo"/> to be published</param>
-		/// <param name="format">Format the tag</param>
-		async void Current_OnTagDiscovered(ITagInfo tagInfo, bool format)
+        /// <summary>
+        /// Event raised when a NFC Tag is discovered
+        /// </summary>
+        /// <param name="tagInfo"><see cref="ITagInfo"/> to be published</param>
+        /// <param name="format">Format the tag</param>
+        async void Current_OnTagDiscovered(ITagInfo tagInfo, bool format)
 		{
 			if (!CrossNFC.Current.IsWritingTagSupported)
 			{
@@ -227,21 +234,6 @@ namespace Proyecto_1_HPA_4
 							MimeType = MIME_TYPE,
 							Payload = NFCUtils.EncodeToByteArray("Plugin.NFC is awesome!"),
 							LanguageCode = "en"
-						};
-						break;
-					case NFCNdefTypeFormat.Uri:
-						record = new NFCNdefRecord
-						{
-							TypeFormat = NFCNdefTypeFormat.Uri,
-							Payload = NFCUtils.EncodeToByteArray("https://github.com/franckbour/Plugin.NFC")
-						};
-						break;
-					case NFCNdefTypeFormat.Mime:
-						record = new NFCNdefRecord
-						{
-							TypeFormat = NFCNdefTypeFormat.Mime,
-							MimeType = MIME_TYPE,
-							Payload = NFCUtils.EncodeToByteArray("Plugin.NFC is awesome!")
 						};
 						break;
 					default:
