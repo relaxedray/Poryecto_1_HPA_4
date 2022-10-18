@@ -3,11 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto_1_HPA_4.VerListado">
     <ContentPage.Content>
-        <ListView x:Name="ListviewListado" 
-                  ItemsSource="{Binding data}"
-                  HasUnevenRows="True"
-                  IsPullToRefreshEnabled="True"
-                  IsRefreshing="{Binding IsRefreshing}">
+        <ListView
+            x:Name="lvEstudiantes"
+            >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

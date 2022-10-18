@@ -7,20 +7,18 @@ namespace Proyecto_1_HPA_4.DB
 {
     class Estudianteinfo
     {
-        private List<Estudiante> ListadodeEstudiantes;
-
-        public List<Estudiante> Get()
+        public static List<Estudiante> ListadodeEstudiantes;
+        public static List<Estudiante> ObtenerEstudiantes()
         {
-            if (ListadodeEstudiantes == null)
+            if(ListadodeEstudiantes == null)
             {
                 ListadodeEstudiantes = new List<Estudiante>();
             }
             return ListadodeEstudiantes;
         }
-        public void AgregarEstudiante(Estudiante estudiante)
+        public static void AgregarEstudiante(Estudiante estudiante)
         {
-            ListadodeEstudiantes.Add(estudiante);
-
+            ObtenerEstudiantes().Add(estudiante);
         }
     }
 }

@@ -10,5 +10,9 @@ namespace Proyecto_1_HPA_4.modelos
         public String Cedula { get; set; }
         public String Fecha { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Nombre}:{Cedula}:{Fecha}";
+        }
     }
 }
