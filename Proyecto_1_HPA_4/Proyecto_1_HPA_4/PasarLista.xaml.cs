@@ -120,10 +120,6 @@ namespace Proyecto_1_HPA_4
 		/// </summary>
 		void SubscribeEvents()
 		{
-			if (_eventsAlreadySubscribed)
-				return;
-
-			_eventsAlreadySubscribed = true;
 
 			CrossNFC.Current.OnMessageReceived += Current_OnMessageReceived;
 			CrossNFC.Current.OnTagDiscovered += Current_OnTagDiscovered;
