@@ -12,21 +12,13 @@ namespace Proyecto_1_HPA_4.DB
         {
             if(ListadodeEstudiantes == null)
             {
-                ListadodeEstudiantes = new List<Estudiante>
-                {
-                    new Estudiante
-                    {
-                        Nombre="Eric",
-                        Cedula="123123",
-                        Fecha=DateTime.Now.ToString()
-                    }
-                };
+                ListadodeEstudiantes = new List<Estudiante>();
             }
             return ListadodeEstudiantes;
         }
         public static void AgregarEstudiante(Estudiante estudiante)
         {
-            ListadodeEstudiantes.Add(estudiante);
+            ObtenerEstudiantes().Add(estudiante);
         }
     }
 }
