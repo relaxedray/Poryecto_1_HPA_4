@@ -4,7 +4,7 @@
              x:Class="Proyecto_1_HPA_4.HomePage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
-            <Label Text="Bienvenido Profesor: Juan Zamora" TextColor="Black" FontSize="25" Margin="10"></Label>
+            <Label x:Name="lblPresentation" TextColor="Black" FontSize="25" Margin="10"></Label>
             <Button
              VerticalOptions="Center"
              HorizontalOptions="Center"

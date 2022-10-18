@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Proyecto_1_HPA_4.DB;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,9 +19,11 @@ namespace Proyecto_1_HPA_4
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            if(txtuser.Text=="12" && txtpass.Text == "asd")
+            var profesor = ProfesoresInfo.ExisteElProfesor(txtuser.Text, txtpass.Text);
+
+            if (profesor != null)
             {
-                Navigation.PushAsync(new HomePage());
+                Navigation.PushAsync(new HomePage(profesor));
             }
             else
             {

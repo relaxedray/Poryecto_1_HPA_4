@@ -195,10 +195,10 @@ namespace Proyecto_1_HPA_4
 				Estudiante estudiante = new Estudiante {
 					Nombre = tagInfo.Records[0].Message,
 					Cedula = tagInfo.Records[1].Message,
-					Fecha = new DateTime().Date.ToString()
+					Fecha = DateTime.Now.ToString()
 				};
 				Estudianteinfo.AgregarEstudiante(estudiante);
-                await ShowAlert(estudiante.ToString(), $"Hola{estudiante.Nombre}");
+                await ShowAlert(estudiante.ToString(), $"Hola {estudiante.Nombre}");
                 //await ShowAlert(GetMessage(first), title);
 			}
 		}
