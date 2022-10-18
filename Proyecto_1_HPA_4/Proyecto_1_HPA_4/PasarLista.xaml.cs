@@ -110,8 +110,8 @@ namespace Proyecto_1_HPA_4
 
 		protected override bool OnBackButtonPressed()
 		{
-			UnsubscribeEvents();
-			CrossNFC.Current.StopListening();
+			//UnsubscribeEvents();
+			//CrossNFC.Current.StopListening();
 			return base.OnBackButtonPressed();
 		}
 
@@ -128,7 +128,7 @@ namespace Proyecto_1_HPA_4
 			CrossNFC.Current.OnMessageReceived += Current_OnMessageReceived;
 			CrossNFC.Current.OnTagDiscovered += Current_OnTagDiscovered;
 			CrossNFC.Current.OnNfcStatusChanged += Current_OnNfcStatusChanged;
-			//CrossNFC.Current.OnTagListeningStatusChanged += Current_OnTagListeningStatusChanged;
+			CrossNFC.Current.OnTagListeningStatusChanged += Current_OnTagListeningStatusChanged;
 
 			if (_isDeviceiOS)
 				CrossNFC.Current.OniOSReadingSessionCancelled += Current_OniOSReadingSessionCancelled;
@@ -142,7 +142,7 @@ namespace Proyecto_1_HPA_4
 			CrossNFC.Current.OnMessageReceived -= Current_OnMessageReceived;
 			CrossNFC.Current.OnTagDiscovered -= Current_OnTagDiscovered;
 			CrossNFC.Current.OnNfcStatusChanged -= Current_OnNfcStatusChanged;
-			//CrossNFC.Current.OnTagListeningStatusChanged -= Current_OnTagListeningStatusChanged;
+			CrossNFC.Current.OnTagListeningStatusChanged -= Current_OnTagListeningStatusChanged;
 
 			if (_isDeviceiOS)
 				CrossNFC.Current.OniOSReadingSessionCancelled -= Current_OniOSReadingSessionCancelled;
