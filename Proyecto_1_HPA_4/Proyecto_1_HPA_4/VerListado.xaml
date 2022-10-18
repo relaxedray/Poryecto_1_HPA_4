@@ -1,17 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Proyecto_1_HPA_4.DB"
              x:Class="Proyecto_1_HPA_4.VerListado">
-    <ContentPage.BindingContext>
-        <local:Estudianteinfo/>
-    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <ListView  
-                  ItemsSource="{Binding ListadodeEstudiantes}"
-                  HasUnevenRows="True"
-                  IsPullToRefreshEnabled="True"
-                  >
+        <ListView
+            x:Name="lvEstudiantes"
+            >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

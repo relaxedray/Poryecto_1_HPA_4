@@ -1,4 +1,5 @@
 ﻿using Plugin.NFC;
+using Proyecto_1_HPA_4.DB;
 using Proyecto_1_HPA_4.modelos;
 using System;
 using System.Collections.Generic;
@@ -196,6 +197,7 @@ namespace Proyecto_1_HPA_4
 					Cedula = tagInfo.Records[1].Message,
 					Fecha = new DateTime().Date.ToString()
 				};
+				Estudianteinfo.AgregarEstudiante(estudiante);
                 await ShowAlert(estudiante.ToString(), $"Hola{estudiante.Nombre}");
                 //await ShowAlert(GetMessage(first), title);
 			}
