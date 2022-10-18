@@ -61,6 +61,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
@@ -90,6 +91,22 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\logo-2.png" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\logo-1.png" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\logo.png" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NFC.imageset\NFC-2.png" />
+    <ImageAsset Include="Assets.xcassets\NFC.imageset\NFC-1.png" />
+    <ImageAsset Include="Assets.xcassets\NFC.imageset\NFC.png" />
+    <ImageAsset Include="Assets.xcassets\NFC.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\utp.imageset\utp-1.jpeg" />
+    <ImageAsset Include="Assets.xcassets\utp.imageset\utp.jpeg" />
+    <ImageAsset Include="Assets.xcassets\utp.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\utp.imageset\utp-2.jpeg" />
+    <ImageAsset Include="Assets.xcassets\background.imageset\background.jpg" />
+    <ImageAsset Include="Assets.xcassets\background.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\background.imageset\background-2.jpg" />
+    <ImageAsset Include="Assets.xcassets\background.imageset\background-1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

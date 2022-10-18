@@ -2,16 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto_1_HPA_4.HomePage">
-    <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
-            <Label x:Name="lblPresentation" TextColor="Black" FontSize="25" Margin="10"></Label>
+    <Grid>
+        <Image Source="utp.jpg" Aspect="AspectFill"></Image>
+        <BoxView>
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="1,1" EndPoint="1,0" >
+                    <GradientStop Color="Transparent" Offset="1"></GradientStop>
+                    <GradientStop Color="#184187" Offset="0.5"></GradientStop>
+                    <GradientStop Color="#184187" Offset="0"></GradientStop>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label x:Name="lblPresentation" TextColor="LightBlue" FontSize="25" Margin="10"></Label>
             <Button
              VerticalOptions="Center"
              HorizontalOptions="Center"
                 WidthRequest="200"
                 Text="Marcar Asistencia"
-                TextColor="Black"
-                BackgroundColor="LightBlue"
+                TextColor="LightBlue"
+                BackgroundColor="#194da6"
                 BorderColor="DarkBlue"
                 BorderWidth="1.2"
                 CornerRadius="50"
@@ -21,12 +32,13 @@
              HorizontalOptions="Center"
              WidthRequest="200"
                 Text="Ver Listado"
-                TextColor="Black"
-                BackgroundColor="LightBlue"
+                TextColor="LightBlue"
+                BackgroundColor="#194da6"
                 BorderColor="DarkBlue"
                 BorderWidth="1.2"
                 CornerRadius="50"
                 Clicked="Ver_Listado"/>
         </StackLayout>
-    </ContentPage.Content>
+    </Grid>
+
 </ContentPage>

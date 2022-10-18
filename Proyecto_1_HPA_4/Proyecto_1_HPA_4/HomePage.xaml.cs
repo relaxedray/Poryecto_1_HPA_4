@@ -14,8 +14,8 @@ namespace Proyecto_1_HPA_4
     {
         public HomePage(Profesor profesor)
         {
-            lblPresentation.Text = String.Format("Bienvenido Profesor: {0}", profesor.Nombre);
             InitializeComponent();
+            lblPresentation.Text = string.Format("Bienvenido Profesor: {0}", profesor.Nombre??"");
         }
         private void Pasar_Lista(object sender, EventArgs e)
         {
